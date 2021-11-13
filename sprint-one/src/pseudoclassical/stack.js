@@ -1,6 +1,26 @@
-var Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+var Stack = function(currentSize = 0, tracker = []) {
+  this.currentSize = currentSize;
+  this.tracker = tracker;
 };
+
+Stack.prototype.push = function(value) {
+  this.tracker = this.tracker.concat(value);
+  this.currentSize++;
+};
+
+Stack.prototype.pop = function() {
+  this.currentSize--;
+  return(this.tracker.splice(-1, 1)[0])
+};
+
+Stack.prototype.size = function() {
+  if (this.currentSize >= 0) {
+    return this.currentSize;
+  }
+
+  else {
+    return 0;
+  }
+}
 
 

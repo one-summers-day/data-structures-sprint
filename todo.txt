@@ -1,0 +1,8 @@
+Saturday @ 10 am - ask for help
+Commit on Git
+
+1. Hash Table - Support collisions
+2. Binary Search Tree
+
+3. Sets - Use hashing function so that it is O(1)
+4. Hash Table - Should double/half in size when needed

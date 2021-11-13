@@ -1,8 +1,31 @@
 var Queue = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+  var someInstance = Object.create(queueMethods);
+  someInstance['currentSize'] = 0;
+  someInstance['tracker'] = [];
+
+  return someInstance;
 };
 
-var queueMethods = {};
+var queueMethods = {
+  enqueue : function(value) {
+    this.tracker = [value].concat(this.tracker);
+    this.currentSize++;
+  },
+
+  dequeue : function() {
+    this.currentSize--;
+    return(this.tracker.splice(-1, 1)[0])
+  },
+
+  size : function() {
+    if (this.currentSize >= 0) {
+      return this.currentSize;
+    }
+
+    else {
+      return 0;
+    }
+  }
+};
 
 

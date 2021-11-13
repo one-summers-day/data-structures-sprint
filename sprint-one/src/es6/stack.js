@@ -1,7 +1,26 @@
 class Stack {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
   constructor() {
+    this.tracker = [];
+    this.currentSize = 0;
   }
 
+  push(value) {
+    this.tracker = this.tracker.concat(value);
+    this.currentSize++;
+  }
+
+  pop() {
+    this.currentSize--;
+    return(this.tracker.splice(-1, 1)[0])
+  }
+
+  size() {
+    if (this.currentSize >= 0) {
+      return this.currentSize;
+    }
+
+    else {
+      return 0;
+    }
+  }
 }
